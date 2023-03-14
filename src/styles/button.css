@@ -1,0 +1,40 @@
+.btn {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    line-height: 1.5;
+    border-radius: 5px;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(90deg, #755bea, #ff72c0);
+
+    margin-top: 5px;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.ripple {
+    position: absolute;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: animate 1s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.5;
+    }
+
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}

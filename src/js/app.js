@@ -1,5 +1,5 @@
-import Button from "./button";
-import Popover from "./popover";
+import Button from './button';
+import Popover from './popover';
 
 const btn = new Button();
 const popover = new Popover();

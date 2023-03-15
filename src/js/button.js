@@ -17,8 +17,8 @@ class Button {
   click() {
     const btn = document.querySelector('.btn');
     btn.addEventListener('click', (evt) => {
-      // evt.preventDefault();
-      const x = evt.target.clientX - evt.target.offsetTop;
+      evt.preventDefault();
+      const x = evt.clientX - evt.target.offsetTop;
       const y = evt.clientY - evt.target.offsetLeft;
 
       const ripple = document.createElement('span');

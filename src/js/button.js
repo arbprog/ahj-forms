@@ -14,32 +14,16 @@ class Button {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  click() {
-    const btn = document.querySelector('.btn');
-    btn.addEventListener('click', (evt) => {
-      evt.preventDefault();
-      const x = evt.clientX - evt.target.offsetTop;
-      const y = evt.clientY - evt.target.offsetLeft;
-
-      const ripple = document.createElement('span');
-      ripple.classList.add('ripple');
-      ripple.style.left = `${x}px`;
-      ripple.style.top = `${y}px`;
-      btn.appendChild(ripple);
-
-      setTimeout(() => {
-        ripple.remove();
-      }, 1000);
-    });
-  }
-
-  // eslint-disable-next-line class-methods-use-this
   toggle() {
     const btn = document.querySelector('.btn');
+    const popover = document.querySelector('.popover');
     btn.addEventListener('click', (evt) => {
       evt.preventDefault();
 
-      const popover = document.querySelector('.popover');
+      const { right, top } = btn.getBoundingClientRect();
+      popover.style.top = `${top - btn.offsetHeight - (btn.offsetHeight / 2)}px`;
+      popover.style.left = `${right - btn.offsetWidth - (btn.offsetWidth / 2)}px`;
+
       popover.classList.toggle('active');
     });
   }

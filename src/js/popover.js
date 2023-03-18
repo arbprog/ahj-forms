@@ -6,6 +6,7 @@ class Popover {
   // eslint-disable-next-line class-methods-use-this
   render() {
     const wrapper = document.querySelector('.wrapper');
+
     wrapper.innerHTML += `
             <div class='popover'>
                 <h3>Popover title</h3>

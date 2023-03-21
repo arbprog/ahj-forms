@@ -1,5 +1,5 @@
 .popover {
-    display: none;
+    display: block;
     position: absolute;
 
     color: #2E3440;

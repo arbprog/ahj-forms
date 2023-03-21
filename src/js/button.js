@@ -1,3 +1,5 @@
+import Popover from './popover';
+
 class Button {
   constructor(elem) {
     this.elem = elem;
@@ -16,15 +18,10 @@ class Button {
   // eslint-disable-next-line class-methods-use-this
   toggle() {
     const btn = document.querySelector('.btn');
-    const popover = document.querySelector('.popover');
     btn.addEventListener('click', (evt) => {
       evt.preventDefault();
-
-      const { right, top } = btn.getBoundingClientRect();
-      popover.style.top = `${top - btn.offsetHeight - (btn.offsetHeight / 2)}px`;
-      popover.style.left = `${right - btn.offsetWidth - (btn.offsetWidth / 2)}px`;
-
-      popover.classList.toggle('active');
+      const pop = new Popover();
+      pop.render();
     });
   }
 }
